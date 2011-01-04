@@ -47,8 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Utility\AdminConsole.cs" />
+    <Compile Include="Utility\Config.cs" />
+    <Compile Include="Utility\Enumerations.cs" />
+    <Compile Include="Utility\Log.cs" />
+    <Compile Include="Core\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BandyLib\BandyLib.csproj">
+      <Project>{EE8F7853-1769-4189-BCFC-C4DD254C9567}</Project>
+      <Name>BandyLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Connection\" />
+    <Folder Include="Game\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
