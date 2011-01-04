@@ -49,11 +49,12 @@
   <ItemGroup>
     <Compile Include="Utility\AdminConsole.cs" />
     <Compile Include="Utility\Config.cs" />
-    <Compile Include="Utility\Enumerations.cs" />
+    <Compile Include="Core\Enumerations.cs" />
+    <Compile Include="Utility\ErrorHandler.cs" />
     <Compile Include="Utility\Log.cs" />
-    <Compile Include="Core\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\Structs.cs" />
+    <Compile Include="Core\Structs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BandyLib\BandyLib.csproj">
@@ -73,4 +74,12 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <!-- Force visual studio to use external compiler and avoid cached files -->
+    <UseHostCompilerIfAvailable>False</UseHostCompilerIfAvailable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>if $(ConfigurationName)==Debug "E:\Programming\C#\100501 IncreBuild\bin\Release\IncreBuild.exe" DEBUG "$(SolutionDir)"
+if $(ConfigurationName)==Release "E:\Programming\C#\100501 IncreBuild\bin\Release\IncreBuild.exe" RELEASE "$(SolutionDir)"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

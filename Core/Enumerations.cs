@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BandyServer.Utility {
+namespace BandyServer.Core {
+
 	public enum CommandLineOptions {
 		ServerConfigFile,
 		GameConfigFile,
@@ -23,7 +24,13 @@ namespace BandyServer.Utility {
 	public enum LogLineType {
 		Error,
 		Warning,
-		Information
+		Information,
+		Debug
+	}
+
+	public enum ErrorType {
+		Fatal,
+		Warning
 	}
 
 }
